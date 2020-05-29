@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 0.12"
+}
+
 variable "vsphere_user" {}
 variable "vsphere_password" {}
 variable "vsphere_server" {}

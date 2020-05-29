@@ -6,3 +6,4 @@
 **/.terraform
 **/.terraform/**
 **/exports.sh
+**.terraform.tfstate.lock.info

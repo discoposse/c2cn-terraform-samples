@@ -1,21 +1,22 @@
-resource "vsphere_virtual_machine" "web-app" {
-  name   = "web-app"
-  vcpu   = 1
-  memory = 2048
-  datacenter = "${var.vsphere_datacenter}"
-  cluster = "${var.vsphere_cluster}"
-
+resource "vsphere_virtual_machine" "vm" {
+  name             = "web-dev"
+  resource_pool_id = data.vsphere_resource_pool.pool.id
+  datastore_id     = data.vsphere_datastore.datastore.id
+  num_cpus = 2
+  memory   = 4096
+  guest_id = "vmwarePhoton64Guest"
+ 
   network_interface {
-  	label = "VM Network"
+    network_id = data.vsphere_network.network.id
   }
-
+ 
   disk {
-  	template = "tmpl_centos_webapp"
-  	type = "thin"
-    datastore = "${var.vsphere_datastore}"
+    label = "disk0"
+    size  = 16
+    thin_provisioned = true
   }
-}
 
-output "address_web-app" {
-  value = "${vsphere_virtual_machine.web-app.network_interface.0.ipv4_address}"
+  clone {
+    template_uuid = data.vsphere_virtual_machine.template.id
+  }
 }
