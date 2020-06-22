@@ -1,4 +1,4 @@
-resource "vsphere_virtual_machine" "vm" {
+resource "vsphere_virtual_machine" "vm-app-1" {
   name             = "vm-app-1"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
@@ -21,7 +21,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 }
 
-resource "vsphere_virtual_machine" "vm" {
+resource "vsphere_virtual_machine" "vm-app-2" {
   name             = "vm-app-2"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
@@ -44,7 +44,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 }
 
-resource "vsphere_virtual_machine" "vm" {
+resource "vsphere_virtual_machine" "vm-app-3" {
   name             = "vm-app-3"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
