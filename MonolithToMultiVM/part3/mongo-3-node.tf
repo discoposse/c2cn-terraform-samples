@@ -1,5 +1,5 @@
-resource "vsphere_virtual_machine" "vm-db-1" {
-  name             = "vm-db-1"
+resource "vsphere_virtual_machine" "vm-mg-1" {
+  name             = "vm-mg-1"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   num_cpus = 2
@@ -21,8 +21,8 @@ resource "vsphere_virtual_machine" "vm-db-1" {
   }
 }
 
-resource "vsphere_virtual_machine" "vm-db-2" {
-  name             = "vm-db-2"
+resource "vsphere_virtual_machine" "vm-mg-2" {
+  name             = "vm-mg-2"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   num_cpus = 2
@@ -44,8 +44,8 @@ resource "vsphere_virtual_machine" "vm-db-2" {
   }
 }
 
-resource "vsphere_virtual_machine" "vm-db-3" {
-  name             = "vm-db-3"
+resource "vsphere_virtual_machine" "vm-mg-3" {
+  name             = "vm-mg-3"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   num_cpus = 2
