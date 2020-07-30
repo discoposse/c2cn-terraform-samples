@@ -8,3 +8,4 @@
 **/.terraform/**
 **/exports.sh
 **.terraform.tfstate.lock.info
+**/sedemo.sh
