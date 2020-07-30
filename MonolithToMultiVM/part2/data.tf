@@ -23,7 +23,7 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "tmpl_centos"
+  name          = "tmpl_photon"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 

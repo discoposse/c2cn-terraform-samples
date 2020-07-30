@@ -6,10 +6,11 @@ resource "vsphere_virtual_machine" "vm" {
   #folder           = "Users/eric.wright"
   num_cpus = 2
   memory   = 4096
+  firmware = "efi"
   # Uncomment below if CentOS
-  guest_id = "centos64Guest"
+  #guest_id = "centos64Guest"
   # Uncomment below if Photon
-  #guest_id = "vmwarePhoton64Guest"
+  guest_id = "vmwarePhoton64Guest"
 
   wait_for_guest_net_timeout = 0
  
@@ -19,8 +20,8 @@ resource "vsphere_virtual_machine" "vm" {
  
   disk {
     label = "disk0"
-    size  = 20
-    #thin_provisioned = true
+    size  = 16
+    thin_provisioned = true
   }
 
   clone {
